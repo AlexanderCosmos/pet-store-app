@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}PetStore|Home{% endblock %}
+{% block body %}
+<div class="container mt-5">
+    <div class="row">
+
+
+        <center>
+            <table class="table table-bordered">
+                <tr>
+                    <th>Sr.No</th>
+                    <TH>petid</TH>
+                    <th>PetName</th>
+                    <th>Age</th>
+                    <th>Description</th>
+                    <th>Photo</th>
+                    <th>update</th>
+                    <th>delete</th>
+
+                </tr>
+                {% for x in allpets %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{x.petid}}</a></td>
+                    <td>{{x.petname}}</a></td>
+                    <td>{{x.age}}</td>
+                    <td>{{x.description}}</td>
+                    <td>
+                        <img src="{{x.photo.url}}" alt="{{x.petname}}" width="100px" height="100px">
+                    </td>
+                    <td><a href="updates/{{x.petid}}">update<a></td>
+                    <td><a href="deletepets/{{x.petid   }}">delete</a></td>
+
+                </tr>
+    </div>
+</div>
+</tr>
+{% endfor %}
+</table>
+</center>
+
+
+{% endblock %}
